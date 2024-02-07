@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Our app uses microphone to allow you to use the speech to binary feature!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Our app uses camera to allow you to use the photo text to binary feature!</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Our app uses speech recognition to allow you to translate your voice into binary!</string>
+</dict>
+</plist>
