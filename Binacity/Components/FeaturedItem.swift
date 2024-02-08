@@ -10,7 +10,7 @@ import SwiftUI
 struct FeaturedItem: View {
     var course: Course
     @Environment(\.sizeCategory) var sizeCategory
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Spacer()
@@ -22,9 +22,11 @@ struct FeaturedItem: View {
                 .background(.ultraThinMaterial)
                 .cornerRadius(18)
                 .modifier(OutlineOverlay(cornerRadius: 18))
+
             Text(course.title)
                 .font(.title).bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
+
             Text(course.text)
                 .font(.body)
                 .fontWeight(.bold)

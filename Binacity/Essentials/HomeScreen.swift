@@ -11,11 +11,11 @@ struct HomeScreen: View {
     @EnvironmentObject var model: Model
     @AppStorage("selectedTab") var selectedTab: Tab = .photo
     @AppStorage("showAccount") var showAccount = false
-    
+
     init() {
         showAccount = false
     }
-    
+
     var body: some View {
         ZStack {
             Group {

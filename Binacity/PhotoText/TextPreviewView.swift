@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TextPreviewView: View {
     var text: String
-    
     var body: some View {
         VStack {
             Text(text)

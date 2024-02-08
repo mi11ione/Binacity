@@ -11,18 +11,17 @@ struct PhotoToTextView: View {
     @ObservedObject var recognizedContent = RecognizedContent()
     @State private var showScanner = false
     @State private var isRecognizing = false
-    @EnvironmentObject var states : States
-    @EnvironmentObject var text : TextItem
-    
-    
+
+    @EnvironmentObject var states: States
+    @EnvironmentObject var text: TextItem
+
     @State var color: Color = .teal
     @State var selectedX: CGFloat = 0
     @State var x: [CGFloat] = [0, 0, 0, 0]
     
     @EnvironmentObject var model: Model
     @AppStorage("selectedTab") var selectedTab: Tab = .photo
-    
-    
+
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 8) {
@@ -35,17 +34,19 @@ struct PhotoToTextView: View {
                     .background(.ultraThinMaterial)
                     .cornerRadius(18)
                     .modifier(OutlineOverlay(cornerRadius: 18))
-                
+
                 Text("Photo to binary")
                     .font(.title).bold()
                     .padding(.bottom)
                     .frame(maxWidth: .infinity, alignment: .center)
+
                 Text("We're gonna get started with translation text from a photo to binary using the binary alphabet! \n\n1. Press the Scan button \n\n2. Make a picture with some text in it \n\n3. Click Save \n\n4. See your text translated into binary. \n\nThis is done using visionKit to recognize the text in the piture, and the strings are replaced with a model of the binary alphabet 📝")
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundStyle(.secondary)
                     .padding(.horizontal)
                     .frame(maxWidth: .infinity, alignment: .center)
+
                 Form {
                     ForEach(recognizedContent.items, id: \.id) { textItem in
                         VStack {
@@ -58,7 +59,6 @@ struct PhotoToTextView: View {
                             TextPreviewView(text: textItem.newText)
                                 .frame(alignment: .center)
                         }
-                        
                     }
 
                     if isRecognizing {
@@ -66,6 +66,7 @@ struct PhotoToTextView: View {
                             .progressViewStyle(CircularProgressViewStyle(tint: Color(UIColor.systemIndigo)))
                             .padding(.bottom, 20)
                     }
+
                     HStack {
                         Spacer()
                         Button(action: {
@@ -90,7 +91,7 @@ struct PhotoToTextView: View {
                     if !states.HomeScreen {
                         HStack {
                             Spacer()
-                            Button (action: {
+                            Button(action: {
                                 withAnimation {
                                     states.PhotoToBinary = false
                                     states.SpeechToBinary = true
@@ -111,14 +112,12 @@ struct PhotoToTextView: View {
                                 }
                             })
                             .padding(.bottom, UIScreen.main.bounds.height * 0.07)
-                            
-                            
                             Spacer()
                         }
                     } else {
                         HStack {
                             Spacer()
-                            Button (action: {
+                            Button(action: {
                                 withAnimation {
                                     states.PhotoToBinary = false
                                     states.SpeechToBinary = false
@@ -140,7 +139,6 @@ struct PhotoToTextView: View {
                                 }
                             })
                             .padding(.bottom, UIScreen.main.bounds.height * 0.07)
-                            
                             Spacer()
                         }
                     }
@@ -148,21 +146,19 @@ struct PhotoToTextView: View {
                 .sheet(isPresented: $showScanner, content: {
                     ScannerView { result in
                         switch result {
+
                         case .success(let scannedImages):
                             isRecognizing = true
-                            
-                            TextRecognition(scannedImages: scannedImages,
-                                            recognizedContent: recognizedContent) {
+                            TextRecognition(scannedImages: scannedImages, recognizedContent: recognizedContent) {
                                 isRecognizing = false
                             }
-                                            .recognizeText()
-                            
+                            .recognizeText()
+
                         case .failure(let error):
                             print(error.localizedDescription)
                         }
-                        
+
                         showScanner = false
-                        
                     } didCancelScanning: {
                         showScanner = false
                     }

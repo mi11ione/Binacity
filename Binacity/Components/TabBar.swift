@@ -18,7 +18,6 @@ struct TabBar: View {
     var body: some View {
         GeometryReader { proxy in
             let hasHomeIndicator = proxy.safeAreaInsets.bottom > 0
-            
             HStack {
                 content
             }
@@ -48,11 +47,10 @@ struct TabBar: View {
             .accessibility(hidden: !model.showTab)
         }
     }
-    
+
     var content: some View {
         ForEach(Array(tabItems.enumerated()), id: \.offset) { index, tab in
             if index == 0 { Spacer() }
-            
             Button {
                 selectedTab = tab.selection
                 withAnimation(.tabSelection) {
@@ -86,7 +84,6 @@ struct TabBar: View {
             .frame(width: 44)
             .foregroundColor(selectedTab == tab.selection ? .primary : .secondary)
             .blendMode(selectedTab == tab.selection ? .overlay : .normal)
-            
             Spacer()
         }
     }

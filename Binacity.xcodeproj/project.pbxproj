@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331614012B74E3E500D5FAFD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331614002B74E3E500D5FAFD /* Dictionary.swift */; };
 		338E28CC2B74186500C39172 /* BinacityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28CB2B74186500C39172 /* BinacityApp.swift */; };
 		338E28CE2B74186500C39172 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28CD2B74186500C39172 /* ContentView.swift */; };
 		338E28D02B74186600C39172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338E28CF2B74186600C39172 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		331614002B74E3E500D5FAFD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		338E28C82B74186500C39172 /* Binacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338E28CB2B74186500C39172 /* BinacityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinacityApp.swift; sourceTree = "<group>"; };
 		338E28CD2B74186500C39172 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331613FF2B74E3A700D5FAFD /* TextBinary */ = {
+			isa = PBXGroup;
+			children = (
+				338E28FC2B74207800C39172 /* TextToBinary.swift */,
+			);
+			path = TextBinary;
+			sourceTree = "<group>";
+		};
 		338E28BF2B74186500C39172 = {
 			isa = PBXGroup;
 			children = (
@@ -94,13 +104,12 @@
 		338E28CA2B74186500C39172 /* Binacity */ = {
 			isa = PBXGroup;
 			children = (
-				338E28E82B741B9300C39172 /* TIT */,
+				331613FF2B74E3A700D5FAFD /* TextBinary */,
 				338E28E72B741B8900C39172 /* SpeechText */,
 				338E28E62B741B7E00C39172 /* PhotoText */,
 				338E28E52B741B6900C39172 /* Styles */,
 				338E28E42B741B6300C39172 /* Model */,
 				338E28E32B741B5600C39172 /* Components */,
-				338E28DD2B74194300C39172 /* Intro & Outro */,
 				338E28FB2B741FDF00C39172 /* Essentials */,
 				338E28CB2B74186500C39172 /* BinacityApp.swift */,
 				338E28CD2B74186500C39172 /* ContentView.swift */,
@@ -108,15 +117,6 @@
 				338E28D12B74186600C39172 /* Binacity.entitlements */,
 			);
 			path = Binacity;
-			sourceTree = "<group>";
-		};
-		338E28DD2B74194300C39172 /* Intro & Outro */ = {
-			isa = PBXGroup;
-			children = (
-				338E28DE2B74199600C39172 /* Intro.swift */,
-				338E28E02B741A7B00C39172 /* Outro.swift */,
-			);
-			path = "Intro & Outro";
 			sourceTree = "<group>";
 		};
 		338E28E32B741B5600C39172 /* Components */ = {
@@ -170,19 +170,14 @@
 			path = SpeechText;
 			sourceTree = "<group>";
 		};
-		338E28E82B741B9300C39172 /* TIT */ = {
-			isa = PBXGroup;
-			children = (
-				338E28FC2B74207800C39172 /* TextToBinary.swift */,
-			);
-			path = TIT;
-			sourceTree = "<group>";
-		};
 		338E28FB2B741FDF00C39172 /* Essentials */ = {
 			isa = PBXGroup;
 			children = (
+				338E28E02B741A7B00C39172 /* Outro.swift */,
+				338E28DE2B74199600C39172 /* Intro.swift */,
 				338E28DA2B7418EB00C39172 /* States.swift */,
 				338E28F92B741FA400C39172 /* HomeScreen.swift */,
+				331614002B74E3E500D5FAFD /* Dictionary.swift */,
 			);
 			path = Essentials;
 			sourceTree = "<group>";
@@ -273,6 +268,7 @@
 				338E28EA2B741BA300C39172 /* FeaturedItem.swift in Sources */,
 				338E29072B74229C00C39172 /* PhotoToTextView.swift in Sources */,
 				338E28CE2B74186500C39172 /* ContentView.swift in Sources */,
+				331614012B74E3E500D5FAFD /* Dictionary.swift in Sources */,
 				338E290B2B74233300C39172 /* TextPreviewView.swift in Sources */,
 				338E28DF2B74199600C39172 /* Intro.swift in Sources */,
 				338E28CC2B74186500C39172 /* BinacityApp.swift in Sources */,

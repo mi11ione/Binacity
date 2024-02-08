@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Outro: View {
-    
     @EnvironmentObject var states : States
     
     var columns = [GridItem(.adaptive(minimum: 300), spacing: 20)]
@@ -23,14 +22,13 @@ struct Outro: View {
     @Namespace var namespace
     
     var body: some View {
-        
         VStack {
             TabView {
                 outroItem()
                     .cornerRadius(30)
                     .modifier(OutlineModifier(cornerRadius: 30))
                     .shadow(color: Color("Shadow").opacity(0.3),
-                            radius: 30, x: 0, y: 30)
+                            radius: 10, x: 0, y: 30)
                     .overlay(
                         Image("partyMemoji")
                             .resizable()
@@ -46,7 +44,7 @@ struct Outro: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 460)
             .background(
-                Image("Blob 1")
+                Image("Blob")
                     .offset(x: 250, y: -100)
                     .accessibility(hidden: true)
             )

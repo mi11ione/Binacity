@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Intro: View {
-    
     @EnvironmentObject var states : States
     
     var columns = [GridItem(.adaptive(minimum: 300), spacing: 20)]
@@ -23,7 +22,6 @@ struct Intro: View {
     @Namespace var namespace
     
     var body: some View {
-        
         VStack {
             TabView {
                 ForEach(courses) { course in
@@ -36,7 +34,7 @@ struct Intro: View {
                                 axis: (x: 0, y: 1, z: 0), perspective: 1
                             )
                             .shadow(color: Color("Shadow").opacity(0.3),
-                                    radius: 30, x: 0, y: 30)
+                                    radius: 10, x: 0, y: 30)
                             .overlay(
                                 Image(course.image)
                                     .resizable()
@@ -59,11 +57,11 @@ struct Intro: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 460)
             .background(
-                Image("Blob 1")
+                Image("Blob")
                     .offset(x: 250, y: -100)
                     .accessibility(hidden: true)
             )
-            Button (action: {
+            Button(action: {
                 withAnimation {
                     states.PhotoToBinary = true
                     states.SpeechToBinary = false
