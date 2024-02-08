@@ -94,7 +94,7 @@ struct TextToBinary: View {
                         })
                         Spacer()
                     }
-                    .padding(.bottom, UIScreen.main.bounds.height * 0.07)
+                    .padding(.bottom)
                 } else {
                     HStack {
                         Spacer()
@@ -120,7 +120,7 @@ struct TextToBinary: View {
                                     .font(.headline)
                             }
                         })
-                        .padding(.bottom, UIScreen.main.bounds.height * 0.07)
+                        .padding(.bottom)
                         Spacer()
                     }
                 }

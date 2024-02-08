@@ -111,7 +111,7 @@ struct PhotoToTextView: View {
                                         .font(.headline)
                                 }
                             })
-                            .padding(.bottom, UIScreen.main.bounds.height * 0.07)
+                            .padding(.bottom)
                             Spacer()
                         }
                     } else {
@@ -138,7 +138,7 @@ struct PhotoToTextView: View {
                                         .font(.headline)
                                 }
                             })
-                            .padding(.bottom, UIScreen.main.bounds.height * 0.07)
+                            .padding(.bottom)
                             Spacer()
                         }
                     }
