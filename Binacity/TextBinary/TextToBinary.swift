@@ -14,10 +14,19 @@ struct TextToBinary: View {
     var tipPercentage = ["Binary", "Normal"]
     @State private var selectedColor = "Binary"
     @FocusState private var amountIsFocused: Bool
+
     var translation: String {
-        return dictionary.reduce(self.checkAmount) {
-            $0.replacingOccurrences(of: $1.key, with: $1.value)
+        convertToBinary(checkAmount)
+    }
+    
+    func convertToBinary(_ input: String) -> String {
+        var result = ""
+        for character in input {
+            if let binaryString = dictionary[String(character)] {
+                result += binaryString
+            }
         }
+        return result
     }
 
     var body: some View {
@@ -47,18 +56,15 @@ struct TextToBinary: View {
             }
             Form {
                 Section {
+                    Text("Original text")
+                        .font(.headline)
+                        .padding(.top)
                     TextField("Input", text: $checkAmount)
-                    Section {
-                        Text("Original text")
-                            .font(.headline)
-                            .padding(.top)
-                        Text(checkAmount)
 
-                        Text("Translated to binary")
-                            .font(.headline)
-                            .padding(.top)
-                        Text(translation)
-                    }
+                    Text("Translated to binary")
+                        .font(.headline)
+                        .padding(.top)
+                    Text(translation)
                 }
             }
             Section {
