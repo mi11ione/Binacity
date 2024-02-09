@@ -18,86 +18,66 @@ struct TextToBinary: View {
     var translation: String {
         convertToBinary(checkAmount)
     }
-    
-    func convertToBinary(_ input: String) -> String {
-        var result = ""
-        for character in input {
-            if let binaryString = dictionary[String(character)] {
-                result += binaryString
-            }
-        }
-        return result
-    }
 
     var body: some View {
         VStack {
-            VStack(alignment: .center, spacing: 8) {
-                Spacer()
-                Image("typeMemoji")
-                    .resizable()
-                    .frame(width: 26, height: 26)
-                    .cornerRadius(10)
-                    .padding(8)
-                    .background(.ultraThinMaterial)
-                    .cornerRadius(18)
-                    .modifier(OutlineOverlay(cornerRadius: 18))
-
-                Text("Typing to binary")
-                    .font(.title).bold()
-                    .padding(.bottom)
-                    .frame(maxWidth: .infinity, alignment: .center)
-
-                Text("Last but not least, we are translating live! \n\n1. Tap the texfield \n\n2. Just type your text in the textfield and you'll see it in binary in real time! \n\n3. Type something like what your mood is today 🌞 \n\n4. Read it in binary \n\nThis method is not using VisionKit or SFSpeechRecognizer. \n\nIt is the only method using just the binary alphabet model.")
+            VStack {
+                HStack {
+                    Text("Typing to binary")
+                        .font(.title).bold()
+                        .padding([.top, .leading])
+                    Image("typeMemoji")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Spacer()
+                }
+                
+                Text("Last but not least, we are translating live now!\n\n1. Tap the texfield \n\n2. Type something like what your mood is today 🌞\n\n3. Read it in binary!")
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.horizontal)
-            }
-            Form {
-                Section {
-                    Text("Original text")
-                        .font(.headline)
-                        .padding(.top)
-                    TextField("Input", text: $checkAmount)
+                    .padding([.bottom, .leading])
 
+                Form {
+                    Text("Original text")
+                        .fontWeight(.bold)
+                    TextField("Type something", text: $checkAmount)
+                    
                     Text("Translated to binary")
-                        .font(.headline)
-                        .padding(.top)
+                        .fontWeight(.bold)
                     Text(translation)
+                        .font(.body)
+                        .fontWeight(.bold)
                 }
-            }
-            Section {
-                if !states.HomeScreen {
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            withAnimation {
-                                states.PhotoToBinary = false
-                                states.SpeechToBinary = false
-                                states.TextToBinary = false
-                                states.FirstWelcome = false
-                                states.HomeScreen = false
-                                states.Outro = true
-                            }
-                        }, label: {
-                            HStack {
-                                Text("Next")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.accentColor)
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.vertical)
-                                    .padding(.leading)
-                                Image(systemName: "chevron.right")
-                                    .font(.headline)
-                            }
-                        })
-                        Spacer()
-                    }
-                    .padding(.bottom)
-                } else {
-                    HStack {
-                        Spacer()
+
+                Section {
+                    if !states.HomeScreen {
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                withAnimation {
+                                    states.PhotoToBinary = false
+                                    states.SpeechToBinary = false
+                                    states.TextToBinary = false
+                                    states.FirstWelcome = false
+                                    states.HomeScreen = false
+                                    states.Outro = true
+                                }
+                            }, label: {
+                                HStack {
+                                    Text("Next")
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.accentColor)
+                                        .multilineTextAlignment(.leading)
+                                        .padding(.vertical)
+                                        .padding(.leading)
+                                    Image(systemName: "chevron.right")
+                                        .font(.headline)
+                                }
+                            })
+                            Spacer()
+                        }
+                    } else {
                         Button(action: {
                             withAnimation {
                                 states.PhotoToBinary = false
@@ -114,23 +94,12 @@ struct TextToBinary: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.accentColor)
                                     .multilineTextAlignment(.leading)
-                                    .padding(.vertical)
-                                    .padding(.leading)
                                 Image(systemName: "repeat")
                                     .font(.headline)
                             }
+                            .padding(.bottom)
                         })
-                        .padding(.bottom)
-                        Spacer()
-                    }
-                }
-            }
-            .navigationTitle("Live text to binary")
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button("Done") {
-                        amountIsFocused = false
+                        .padding()
                     }
                 }
             }

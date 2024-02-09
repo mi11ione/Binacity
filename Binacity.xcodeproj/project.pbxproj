@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		331614012B74E3E500D5FAFD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331614002B74E3E500D5FAFD /* Dictionary.swift */; };
+		338883892B76C23600FFECCA /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338883882B76C23600FFECCA /* Translation.swift */; };
 		338E28CC2B74186500C39172 /* BinacityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28CB2B74186500C39172 /* BinacityApp.swift */; };
 		338E28CE2B74186500C39172 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28CD2B74186500C39172 /* ContentView.swift */; };
 		338E28D02B74186600C39172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338E28CF2B74186600C39172 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		331614002B74E3E500D5FAFD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		338883882B76C23600FFECCA /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		338E28C82B74186500C39172 /* Binacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338E28CB2B74186500C39172 /* BinacityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinacityApp.swift; sourceTree = "<group>"; };
 		338E28CD2B74186500C39172 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				338E28DA2B7418EB00C39172 /* States.swift */,
 				338E28F92B741FA400C39172 /* HomeScreen.swift */,
 				331614002B74E3E500D5FAFD /* Dictionary.swift */,
+				338883882B76C23600FFECCA /* Translation.swift */,
 			);
 			path = Essentials;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				338E29052B74226C00C39172 /* ModelPhoto.swift in Sources */,
 				338E28F62B741EDF00C39172 /* Animations.swift in Sources */,
 				338E28E12B741A7B00C39172 /* Outro.swift in Sources */,
+				338883892B76C23600FFECCA /* Translation.swift in Sources */,
 				338E28DB2B7418EB00C39172 /* States.swift in Sources */,
 				338E28F22B741EA100C39172 /* PreferenceKey.swift in Sources */,
 				338E28FD2B74207800C39172 /* TextToBinary.swift in Sources */,

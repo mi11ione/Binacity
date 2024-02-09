@@ -89,7 +89,7 @@ struct outroItem: View {
             Text("We're done!")
                 .font(.title).bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Text("This is my take on implementing binary using multiple methods. \n\nI hope you enjoyed it and learned something from my app! \n\nI wish you a wonderful day 🤩 Explore everything again by clicking Go Home")
+            Text("This is my take on implementing binary using multiple methods\n\nI hope you enjoyed it and learned something from my app!\n\nI wish you a wonderful day 🤩")
                 .font(.body)
                 .fontWeight(.bold)
                 .foregroundStyle(.secondary)

@@ -34,7 +34,7 @@ struct Intro: View {
                                 axis: (x: 0, y: 1, z: 0), perspective: 1
                             )
                             .shadow(color: Color("Shadow").opacity(0.3),
-                                    radius: 10, x: 0, y: 30)
+                                    radius: 30, x: 0, y: 30)
                             .overlay(
                                 Image(course.image)
                                     .resizable()
@@ -53,7 +53,6 @@ struct Intro: View {
                     }
                 }
             }
-            .padding(.horizontal)
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 460)
             .background(

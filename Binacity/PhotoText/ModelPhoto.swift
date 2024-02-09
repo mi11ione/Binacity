@@ -15,12 +15,11 @@ class TextItem: Identifiable, ObservableObject {
             $0.replacingOccurrences(of: $1.key, with: $1.value)
         }
     }
-    
+
     init() {
         id = UUID().uuidString
     }
 }
-
 
 class RecognizedContent: ObservableObject {
     @Published var items = [TextItem]()

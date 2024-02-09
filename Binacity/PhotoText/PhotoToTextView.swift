@@ -24,28 +24,22 @@ struct PhotoToTextView: View {
 
     var body: some View {
         VStack {
-            VStack(alignment: .center, spacing: 8) {
-                Spacer()
-                Image("photoMemoji")
-                    .resizable()
-                    .frame(width: 26, height: 26)
-                    .cornerRadius(10)
-                    .padding(8)
-                    .background(.ultraThinMaterial)
-                    .cornerRadius(18)
-                    .modifier(OutlineOverlay(cornerRadius: 18))
+            VStack {
+                HStack {
+                    Text("Photo to binary")
+                        .font(.title).bold()
+                        .padding([.top, .leading])
+                    Image("photoMemoji")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Spacer()
+                }
 
-                Text("Photo to binary")
-                    .font(.title).bold()
-                    .padding(.bottom)
-                    .frame(maxWidth: .infinity, alignment: .center)
-
-                Text("We're gonna get started with translation text from a photo to binary using the binary alphabet! \n\n1. Press the Scan button \n\n2. Make a picture with some text in it \n\n3. Click Save \n\n4. See your text translated into binary. \n\nThis is done using visionKit to recognize the text in the piture, and the strings are replaced with a model of the binary alphabet 📝")
+                Text("We're gonna get started with translating text from a photo to binary using the binary alphabet using VisionKit!\n\n1. Press the Scan button \n\n2. Make a picture with some text in it\n\n3. Click Save\n\n4. See your text translated into binary")
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundStyle(.secondary)
-                    .padding(.horizontal)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding([.bottom, .horizontal])
 
                 Form {
                     ForEach(recognizedContent.items, id: \.id) { textItem in
@@ -53,11 +47,9 @@ struct PhotoToTextView: View {
                             Text("Original Text")
                                 .fontWeight(.bold)
                             TextPreviewView(text: textItem.text)
-                                .frame(maxWidth: .infinity, alignment: .center)
                             Text("Translated to binary")
                                 .fontWeight(.bold)
                             TextPreviewView(text: textItem.newText)
-                                .frame(alignment: .center)
                         }
                     }
 
@@ -68,24 +60,22 @@ struct PhotoToTextView: View {
                     }
 
                     HStack {
-                        Spacer()
                         Button(action: {
                             guard !isRecognizing else { return }
                             showScanner = true
                         }, label: {
                             HStack {
+                                Spacer()
                                 Text("Scan")
                                     .fontWeight(.bold)
                                     .foregroundColor(.accentColor)
-                                    .multilineTextAlignment(.leading)
                                     .padding(.vertical)
                                 Image(systemName: "doc.text.viewfinder")
                                     .font(.headline)
+                                Spacer()
                             }
                         })
-                        Spacer()
                     }
-                    .navigationTitle("Photo to binary")
                 }
                 Section {
                     if !states.HomeScreen {
@@ -111,36 +101,30 @@ struct PhotoToTextView: View {
                                         .font(.headline)
                                 }
                             })
-                            .padding(.bottom)
                             Spacer()
                         }
                     } else {
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                withAnimation {
-                                    states.PhotoToBinary = false
-                                    states.SpeechToBinary = false
-                                    states.TextToBinary = false
-                                    states.FirstWelcome = false
-                                    states.HomeScreen = false
-                                    states.Intro = true
-                                }
-                            }, label: {
-                                HStack {
-                                    Text("Start Introduction Again")
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.accentColor)
-                                        .multilineTextAlignment(.leading)
-                                        .padding(.vertical)
-                                        .padding(.leading)
-                                    Image(systemName: "repeat")
-                                        .font(.headline)
-                                }
-                            })
+                        Button(action: {
+                            withAnimation {
+                                states.PhotoToBinary = false
+                                states.SpeechToBinary = false
+                                states.TextToBinary = false
+                                states.FirstWelcome = false
+                                states.HomeScreen = false
+                                states.Intro = true
+                            }
+                        }, label: {
+                            HStack {
+                                Text("Start Introduction Again")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.accentColor)
+                                    .multilineTextAlignment(.leading)
+                                Image(systemName: "repeat")
+                                    .font(.headline)
+                            }
                             .padding(.bottom)
-                            Spacer()
-                        }
+                        })
+                        .padding()
                     }
                 }
                 .sheet(isPresented: $showScanner, content: {
