@@ -14,8 +14,7 @@ struct FeaturedItem: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Spacer()
-            Image(course.logo)
-                .resizable()
+            Image(systemName: course.logo)
                 .frame(width: 26, height: 26)
                 .cornerRadius(10)
                 .padding(8)

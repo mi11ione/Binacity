@@ -78,8 +78,7 @@ struct outroItem: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Spacer()
-            Image("partyMemoji")
-                .resizable()
+            Image(systemName: "visionpro")
                 .frame(width: 26, height: 26)
                 .cornerRadius(10)
                 .padding(8)

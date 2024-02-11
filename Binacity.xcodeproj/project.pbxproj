@@ -125,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				338E28E92B741BA300C39172 /* FeaturedItem.swift */,
+				331614002B74E3E500D5FAFD /* Dictionary.swift */,
+				338883882B76C23600FFECCA /* Translation.swift */,
 				338E28EB2B741BDB00C39172 /* TabBar.swift */,
 			);
 			path = Components;
@@ -179,8 +181,6 @@
 				338E28DE2B74199600C39172 /* Intro.swift */,
 				338E28DA2B7418EB00C39172 /* States.swift */,
 				338E28F92B741FA400C39172 /* HomeScreen.swift */,
-				331614002B74E3E500D5FAFD /* Dictionary.swift */,
-				338883882B76C23600FFECCA /* Translation.swift */,
 			);
 			path = Essentials;
 			sourceTree = "<group>";
