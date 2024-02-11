@@ -59,6 +59,14 @@ extension View {
     func slideFadeIn(show: Bool, offset: Double = 10) -> some View {
         self.modifier(SlideFadeIn(show: show, offset: offset))
     }
+
+    func backgroundStyle(cornerRadius: CGFloat = 20, opacity: Double = 0.6) -> some View {
+        self.modifier(BackgroundStyle(cornerRadius: cornerRadius, opacity: opacity))
+    }
+
+    func backgroundColor(opacity: Double = 0.6) -> some View {
+        self.modifier(BackgroundColor(opacity: opacity))
+    }
 }
 
 struct OutlineOverlay: ViewModifier {
@@ -98,19 +106,6 @@ struct BackgroundColor: ViewModifier {
             )
     }
 }
-
-extension View {
-    func backgroundColor(opacity: Double = 0.6) -> some View {
-        self.modifier(BackgroundColor(opacity: opacity))
-    }
-}
-
-extension View {
-    func backgroundStyle(cornerRadius: CGFloat = 20, opacity: Double = 0.6) -> some View {
-        self.modifier(BackgroundStyle(cornerRadius: cornerRadius, opacity: opacity))
-    }
-}
-
 
 struct BackgroundStyle: ViewModifier {
     var cornerRadius: CGFloat = 20
