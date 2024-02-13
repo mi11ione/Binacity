@@ -25,8 +25,6 @@ struct ContentView: View {
                     TextToBinary()
                 } else if states.VoiceToBinary {
                     VoiceToTextView()
-                } else if states.Outro {
-                    Outro()
                 } else {
                     HomeScreen()
                 }

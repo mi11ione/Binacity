@@ -17,5 +17,4 @@ class States: ObservableObject {
     @Published var FirstWelcome: Bool = false
     @Published var HomeScreen: Bool = false
     @Published var Intro: Bool = true
-    @Published var Outro: Bool = false
 }

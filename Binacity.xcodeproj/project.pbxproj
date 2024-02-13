@@ -16,7 +16,6 @@
 		338E28D02B74186600C39172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338E28CF2B74186600C39172 /* Assets.xcassets */; };
 		338E28DB2B7418EB00C39172 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28DA2B7418EB00C39172 /* States.swift */; };
 		338E28DF2B74199600C39172 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28DE2B74199600C39172 /* Intro.swift */; };
-		338E28E12B741A7B00C39172 /* Outro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28E02B741A7B00C39172 /* Outro.swift */; };
 		338E28EA2B741BA300C39172 /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28E92B741BA300C39172 /* FeaturedItem.swift */; };
 		338E28EC2B741BDB00C39172 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28EB2B741BDB00C39172 /* TabBar.swift */; };
 		338E28EE2B741C1600C39172 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28ED2B741C1600C39172 /* Course.swift */; };
@@ -47,7 +46,6 @@
 		338E28D12B74186600C39172 /* Binacity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Binacity.entitlements; sourceTree = "<group>"; };
 		338E28DA2B7418EB00C39172 /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		338E28DE2B74199600C39172 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
-		338E28E02B741A7B00C39172 /* Outro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outro.swift; sourceTree = "<group>"; };
 		338E28E92B741BA300C39172 /* FeaturedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
 		338E28EB2B741BDB00C39172 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		338E28ED2B741C1600C39172 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 		338E28FB2B741FDF00C39172 /* Essentials */ = {
 			isa = PBXGroup;
 			children = (
-				338E28E02B741A7B00C39172 /* Outro.swift */,
 				338E28DE2B74199600C39172 /* Intro.swift */,
 				338E28DA2B7418EB00C39172 /* States.swift */,
 				338E28F92B741FA400C39172 /* HomeScreen.swift */,
@@ -262,7 +259,6 @@
 				338E28FA2B741FA400C39172 /* HomeScreen.swift in Sources */,
 				338E29052B74226C00C39172 /* ModelPhoto.swift in Sources */,
 				338E28F62B741EDF00C39172 /* Animations.swift in Sources */,
-				338E28E12B741A7B00C39172 /* Outro.swift in Sources */,
 				338883892B76C23600FFECCA /* Translation.swift in Sources */,
 				338E28DB2B7418EB00C39172 /* States.swift in Sources */,
 				338E28F22B741EA100C39172 /* PreferenceKey.swift in Sources */,
