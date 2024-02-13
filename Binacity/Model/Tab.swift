@@ -17,7 +17,7 @@ struct TabItem: Identifiable {
 
 var tabItems = [
     TabItem(name: "Photo", icon: "camera", color: .teal, selection: .photo),
-    TabItem(name: "Speech", icon: "mic.fill", color: .red, selection: .speech),
+    TabItem(name: "Voice", icon: "mic.fill", color: .red, selection: .speech),
     TabItem(name: "Text", icon: "bubble.left.fill", color: .blue, selection: .text)
 ]
 

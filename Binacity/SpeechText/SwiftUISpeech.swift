@@ -14,7 +14,7 @@ public class SwiftUISpeech: ObservableObject{
         self.recognitionTask = nil
     }
 
-    func getButton() -> SpeechButton {
+    func getButton() -> VoiceButton {
         return button
     }
 
@@ -74,7 +74,7 @@ public class SwiftUISpeech: ObservableObject{
         self.recognitionTask = nil
     }
 
-    func getSpeechStatus() -> String {
+    func getVoiceStatus() -> String {
         switch authStat {
         case .authorized:
             return "Authorized"
@@ -90,7 +90,7 @@ public class SwiftUISpeech: ObservableObject{
     }
 
     @Published var isRecording: Bool = false
-    @Published var button = SpeechButton()
+    @Published var button = VoiceButton()
 
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?

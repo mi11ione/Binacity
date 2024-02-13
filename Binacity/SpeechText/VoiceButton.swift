@@ -1,21 +1,21 @@
 //
-//  SpeechButton.swift
+//  VoiceButton.swift
 //  Binacity
 //
-//  Created by mi11ion on 07.02.2024.
+//  Created by mi11ion on 13.02.2024.
 //
 
 import SwiftUI
 import Speech
 
-struct SpeechButton: View {
+struct VoiceButton: View {
     @State var isPressed: Bool = false
     @State var actionPop: Bool = false
     @EnvironmentObject var swiftUISpeech: SwiftUISpeech
 
     var body: some View {
         Button(action: {
-            if (self.swiftUISpeech.getSpeechStatus() == "Denied - Close the App") {
+            if (self.swiftUISpeech.getVoiceStatus() == "Denied - Close the App") {
                 self.actionPop.toggle()
             } else {
                 withAnimation(.spring(response: 0.4, dampingFraction: 0.3, blendDuration: 0.3)){self.swiftUISpeech.isRecording.toggle()}

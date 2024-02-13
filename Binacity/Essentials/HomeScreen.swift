@@ -23,7 +23,7 @@ struct HomeScreen: View {
                 case .photo:
                     PhotoToTextView()
                 case .speech:
-                    SpeechToTextView()
+                    VoiceToTextView()
                 case .text:
                     TextToBinary()
                 }

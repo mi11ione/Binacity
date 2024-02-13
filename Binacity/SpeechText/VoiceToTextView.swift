@@ -1,17 +1,17 @@
 //
-//  SpeechToTextView.swift
+//  VoiceToTextView.swift
 //  Binacity
 //
-//  Created by mi11ion on 07.02.2024.
+//  Created by mi11ion on 13.02.2024.
 //
 
 import SwiftUI
 import Speech
 
-struct SpeechToTextView: View {
+struct VoiceToTextView: View {
     @EnvironmentObject var swiftUISpeech: SwiftUISpeech
     @EnvironmentObject var states: States
-    var translationSpeech: String {
+    var translationVoice: String {
         return dictionary.reduce(self.swiftUISpeech.outputText) { $0.replacingOccurrences(of: $1.key, with: $1.value) }
     }
 
@@ -19,7 +19,7 @@ struct SpeechToTextView: View {
         VStack {
             VStack {
                 HStack {
-                    Text("Speech to binary")
+                    Text("Voice to binary")
                         .font(.title).bold()
                         .padding([.top, .leading])
                     Image("speechMemoji")
@@ -48,7 +48,7 @@ struct SpeechToTextView: View {
                     }
                     
                     Section(header: Text("Translated to binary").fontWeight(.bold)) {
-                        Text(translationSpeech)
+                        Text(translationVoice)
                             .padding(.vertical, 7)
                             .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 9))

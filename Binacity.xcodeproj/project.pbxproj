@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		331614012B74E3E500D5FAFD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331614002B74E3E500D5FAFD /* Dictionary.swift */; };
+		336C91212B7C056300B172DF /* VoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C91202B7C056300B172DF /* VoiceButton.swift */; };
+		336C91232B7C057E00B172DF /* VoiceToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C91222B7C057E00B172DF /* VoiceToTextView.swift */; };
 		338883892B76C23600FFECCA /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338883882B76C23600FFECCA /* Translation.swift */; };
 		338E28CC2B74186500C39172 /* BinacityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28CB2B74186500C39172 /* BinacityApp.swift */; };
 		338E28CE2B74186500C39172 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28CD2B74186500C39172 /* ContentView.swift */; };
@@ -25,8 +27,6 @@
 		338E28F82B741EF800C39172 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28F72B741EF800C39172 /* Modifiers.swift */; };
 		338E28FA2B741FA400C39172 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28F92B741FA400C39172 /* HomeScreen.swift */; };
 		338E28FD2B74207800C39172 /* TextToBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28FC2B74207800C39172 /* TextToBinary.swift */; };
-		338E28FF2B7420F700C39172 /* SpeechButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28FE2B7420F700C39172 /* SpeechButton.swift */; };
-		338E29012B74215E00C39172 /* SpeechToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29002B74215E00C39172 /* SpeechToTextView.swift */; };
 		338E29032B7421B300C39172 /* SwiftUISpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29022B7421B300C39172 /* SwiftUISpeech.swift */; };
 		338E29052B74226C00C39172 /* ModelPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29042B74226C00C39172 /* ModelPhoto.swift */; };
 		338E29072B74229C00C39172 /* PhotoToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29062B74229C00C39172 /* PhotoToTextView.swift */; };
@@ -37,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		331614002B74E3E500D5FAFD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		336C91202B7C056300B172DF /* VoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceButton.swift; sourceTree = "<group>"; };
+		336C91222B7C057E00B172DF /* VoiceToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceToTextView.swift; sourceTree = "<group>"; };
 		338883882B76C23600FFECCA /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		338E28C82B74186500C39172 /* Binacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338E28CB2B74186500C39172 /* BinacityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinacityApp.swift; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		338E28F72B741EF800C39172 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		338E28F92B741FA400C39172 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		338E28FC2B74207800C39172 /* TextToBinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToBinary.swift; sourceTree = "<group>"; };
-		338E28FE2B7420F700C39172 /* SpeechButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechButton.swift; sourceTree = "<group>"; };
-		338E29002B74215E00C39172 /* SpeechToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextView.swift; sourceTree = "<group>"; };
 		338E29022B7421B300C39172 /* SwiftUISpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISpeech.swift; sourceTree = "<group>"; };
 		338E29042B74226C00C39172 /* ModelPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPhoto.swift; sourceTree = "<group>"; };
 		338E29062B74229C00C39172 /* PhotoToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoToTextView.swift; sourceTree = "<group>"; };
@@ -167,9 +167,9 @@
 		338E28E72B741B8900C39172 /* SpeechText */ = {
 			isa = PBXGroup;
 			children = (
-				338E28FE2B7420F700C39172 /* SpeechButton.swift */,
-				338E29002B74215E00C39172 /* SpeechToTextView.swift */,
 				338E29022B7421B300C39172 /* SwiftUISpeech.swift */,
+				336C91202B7C056300B172DF /* VoiceButton.swift */,
+				336C91222B7C057E00B172DF /* VoiceToTextView.swift */,
 			);
 			path = SpeechText;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 				338E28F02B741E7100C39172 /* Model.swift in Sources */,
 				338E290D2B74234100C39172 /* TextRecognition.swift in Sources */,
 				338E29032B7421B300C39172 /* SwiftUISpeech.swift in Sources */,
-				338E28FF2B7420F700C39172 /* SpeechButton.swift in Sources */,
+				336C91212B7C056300B172DF /* VoiceButton.swift in Sources */,
 				338E28EE2B741C1600C39172 /* Course.swift in Sources */,
 				338E28FA2B741FA400C39172 /* HomeScreen.swift in Sources */,
 				338E29052B74226C00C39172 /* ModelPhoto.swift in Sources */,
@@ -271,6 +271,7 @@
 				338E29092B7422D800C39172 /* ScannerView.swift in Sources */,
 				338E28EA2B741BA300C39172 /* FeaturedItem.swift in Sources */,
 				338E29072B74229C00C39172 /* PhotoToTextView.swift in Sources */,
+				336C91232B7C057E00B172DF /* VoiceToTextView.swift in Sources */,
 				338E28CE2B74186500C39172 /* ContentView.swift in Sources */,
 				331614012B74E3E500D5FAFD /* Dictionary.swift in Sources */,
 				338E290B2B74233300C39172 /* TextPreviewView.swift in Sources */,
@@ -278,7 +279,6 @@
 				338E28CC2B74186500C39172 /* BinacityApp.swift in Sources */,
 				338E28EC2B741BDB00C39172 /* TabBar.swift in Sources */,
 				338E28F82B741EF800C39172 /* Modifiers.swift in Sources */,
-				338E29012B74215E00C39172 /* SpeechToTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

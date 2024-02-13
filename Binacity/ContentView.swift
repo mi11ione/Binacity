@@ -23,8 +23,8 @@ struct ContentView: View {
                     PhotoToTextView()
                 } else if states.TextToBinary {
                     TextToBinary()
-                } else if states.SpeechToBinary {
-                    SpeechToTextView()
+                } else if states.VoiceToBinary {
+                    VoiceToTextView()
                 } else if states.Outro {
                     Outro()
                 } else {

@@ -64,7 +64,7 @@ struct Intro: View {
             Button(action: {
                 withAnimation {
                     states.PhotoToBinary = false
-                    states.SpeechToBinary = false
+                    states.VoiceToBinary = false
                     states.TextToBinary = false
                     states.FirstWelcome = false
                     states.HomeScreen = true
