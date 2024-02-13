@@ -37,18 +37,24 @@ struct SpeechToTextView: View {
                     .padding(.vertical)
                     .padding(.bottom)
 
-                Form {
-                    Text("Original Text")
-                        .fontWeight(.bold)
-                    Text("\(swiftUISpeech.outputText)")
-                        .font(.body)
-                        .fontWeight(.bold)
-
-                    Text("Translated to binary")
-                        .fontWeight(.bold)
-                    Text("\(translationSpeech)")
-                        .font(.body)
-                        .fontWeight(.bold)
+                List {
+                    Section(header: Text("Original Text").fontWeight(.bold)) {
+                        Text(swiftUISpeech.outputText)
+                            .padding(.vertical, 7)
+                            .background(Color(.secondarySystemBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 9))
+                            .font(.body)
+                            .fontWeight(.bold)
+                    }
+                    
+                    Section(header: Text("Translated to binary").fontWeight(.bold)) {
+                        Text(translationSpeech)
+                            .padding(.vertical, 7)
+                            .background(Color(.secondarySystemBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 9))
+                            .font(.body)
+                            .fontWeight(.bold)
+                    }
                 }
             }
         }

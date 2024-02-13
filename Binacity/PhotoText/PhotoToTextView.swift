@@ -41,40 +41,57 @@ struct PhotoToTextView: View {
                     .foregroundStyle(.secondary)
                     .padding([.bottom, .horizontal])
 
-                Form {
+                List {
                     ForEach(recognizedContent.items, id: \.id) { textItem in
-                        VStack {
-                            Text("Original Text")
-                                .fontWeight(.bold)
-                            TextPreviewView(text: textItem.text)
-                            Text("Translated to binary")
-                                .fontWeight(.bold)
-                            TextPreviewView(text: textItem.newText)
+                        Section(header: Text("Original Text").fontWeight(.bold)) {
+                            VStack(alignment: .leading) {
+                                Text(textItem.text)
+                                    .padding(.vertical, 7)
+                                    .background(Color(.secondarySystemBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 9))
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                            }
+                        }
+                        
+                        Section(header: Text("Translated to binary").fontWeight(.bold)) {
+                            VStack(alignment: .leading) {
+                                Text(textItem.newText)
+                                    .padding(.vertical, 7)
+                                    .background(Color(.secondarySystemBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 9))
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                            }
                         }
                     }
 
                     if isRecognizing {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: Color(UIColor.systemIndigo)))
-                            .padding(.bottom, 20)
+                        Section {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: Color(UIColor.systemIndigo)))
+                                .scaleEffect(1.5)
+                                .padding()
+                        }
                     }
 
-                    HStack {
+                    Section {
                         Button(action: {
                             guard !isRecognizing else { return }
                             showScanner = true
-                        }, label: {
+                        }) {
                             HStack {
                                 Spacer()
                                 Text("Scan")
                                     .fontWeight(.bold)
                                     .foregroundColor(.accentColor)
-                                    .padding(.vertical)
                                 Image(systemName: "doc.text.viewfinder")
                                     .font(.headline)
                                 Spacer()
                             }
-                        })
+                            .background(Color(.secondarySystemBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 9))
+                        }
                     }
                 }
                 .sheet(isPresented: $showScanner, content: {

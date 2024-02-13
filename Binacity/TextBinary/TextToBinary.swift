@@ -10,15 +10,14 @@ import SwiftUI
 struct TextToBinary: View {
     @EnvironmentObject var states: States
     @State private var checkAmount = ""
-    @State private var numberOfPeople = 2
     var tipPercentage = ["Binary", "Normal"]
     @State private var selectedColor = "Binary"
     @FocusState private var amountIsFocused: Bool
-
+    
     var translation: String {
         convertToBinary(checkAmount)
     }
-
+    
     var body: some View {
         VStack {
             VStack {
@@ -32,23 +31,35 @@ struct TextToBinary: View {
                     Spacer()
                 }
                 
-                Text("Last but not least, we are translating live now!\n\n1. Tap the texfield \n\n2. Type something like what your mood is today 🌞\n\n3. Read it in binary!")
+                Text("Last but not least, we are translating live now!\n\n1. Tap the texfield \n\n2. Type something\n\n3. Read it in binary!")
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundStyle(.secondary)
                     .padding([.bottom, .leading])
-
-                Form {
-                    Text("Original text")
-                        .fontWeight(.bold)
-                    TextField("Type something", text: $checkAmount)
+                
+                List {
+                    Section(header: Text("Original text").fontWeight(.bold)) {
+                        TextField("Type something", text: $checkAmount)
+                            .padding(.vertical, 7)
+                            .background(Color(.secondarySystemBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 9))
+                            .focused($amountIsFocused)
+                    }
                     
-                    Text("Translated to binary")
-                        .fontWeight(.bold)
-                    Text(translation)
-                        .font(.body)
-                        .fontWeight(.bold)
+                    Section(header: Text("Translated to binary").fontWeight(.bold)) {
+                        Text(translation)
+                            .padding(.vertical, 7)
+                            .background(Color(.secondarySystemBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 9))
+                            .font(.body)
+                            .fontWeight(.bold)
+                    }
                 }
+                .gesture(
+                    TapGesture().onEnded {
+                        amountIsFocused = false
+                    }
+                )
             }
         }
     }
