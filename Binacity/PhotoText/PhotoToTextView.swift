@@ -77,56 +77,6 @@ struct PhotoToTextView: View {
                         })
                     }
                 }
-                Section {
-                    if !states.HomeScreen {
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                withAnimation {
-                                    states.PhotoToBinary = false
-                                    states.SpeechToBinary = true
-                                    states.TextToBinary = false
-                                    states.FirstWelcome = false
-                                    states.HomeScreen = false
-                                }
-                            }, label: {
-                                HStack {
-                                    Text("Next")
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.accentColor)
-                                        .multilineTextAlignment(.leading)
-                                        .padding(.vertical)
-                                        .padding(.leading)
-                                    Image(systemName: "chevron.right")
-                                        .font(.headline)
-                                }
-                            })
-                            Spacer()
-                        }
-                    } else {
-                        Button(action: {
-                            withAnimation {
-                                states.PhotoToBinary = false
-                                states.SpeechToBinary = false
-                                states.TextToBinary = false
-                                states.FirstWelcome = false
-                                states.HomeScreen = false
-                                states.Intro = true
-                            }
-                        }, label: {
-                            HStack {
-                                Text("Start Introduction Again")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.accentColor)
-                                    .multilineTextAlignment(.leading)
-                                Image(systemName: "repeat")
-                                    .font(.headline)
-                            }
-                            .padding(.bottom)
-                        })
-                        .padding()
-                    }
-                }
                 .sheet(isPresented: $showScanner, content: {
                     ScannerView { result in
                         switch result {

@@ -8,31 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var states : States
+    @EnvironmentObject var states: States
+    @AppStorage("introCompleted") private var introCompleted = false
 
     var body: some View {
-        if states.Intro {
-            Intro()
-        }
-
-        if states.PhotoToBinary {
-            PhotoToTextView()
-        }
-
-        if states.TextToBinary {
-            TextToBinary()
-        }
-
-        if states.SpeechToBinary {
-            SpeechToTextView()
-        }
-
-        if states.HomeScreen {
-            HomeScreen()
-        }
-
-        if states.Outro {
-            Outro()
+        Group {
+            if !introCompleted {
+                Intro(onIntroCompleted: {
+                    self.introCompleted = true
+                    states.HomeScreen = true
+                })
+            } else {
+                if states.PhotoToBinary {
+                    PhotoToTextView()
+                } else if states.TextToBinary {
+                    TextToBinary()
+                } else if states.SpeechToBinary {
+                    SpeechToTextView()
+                } else if states.Outro {
+                    Outro()
+                } else {
+                    HomeScreen()
+                }
+            }
         }
     }
 }

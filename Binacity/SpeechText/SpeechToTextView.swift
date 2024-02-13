@@ -50,57 +50,6 @@ struct SpeechToTextView: View {
                         .font(.body)
                         .fontWeight(.bold)
                 }
-
-                Section {
-                    if !states.HomeScreen {
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                withAnimation {
-                                    states.PhotoToBinary = false
-                                    states.SpeechToBinary = false
-                                    states.TextToBinary = true
-                                    states.FirstWelcome = false
-                                    states.HomeScreen = false
-                                }
-                            }, label: {
-                                HStack {
-                                    Text("Next")
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.accentColor)
-                                        .multilineTextAlignment(.leading)
-                                        .padding(.vertical)
-                                        .padding(.leading)
-                                    Image(systemName: "chevron.right")
-                                        .font(.headline)
-                                }
-                            })
-                            Spacer()
-                        }
-                    } else {
-                        Button(action: {
-                            withAnimation {
-                                states.PhotoToBinary = false
-                                states.SpeechToBinary = false
-                                states.TextToBinary = false
-                                states.FirstWelcome = false
-                                states.HomeScreen = false
-                                states.Intro = true
-                            }
-                        }, label: {
-                            HStack {
-                                Text("Start Introduction Again")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.accentColor)
-                                    .multilineTextAlignment(.leading)
-                                Image(systemName: "repeat")
-                                    .font(.headline)
-                            }
-                            .padding(.bottom)
-                        })
-                        .padding()
-                    }
-                }
             }
         }
     }

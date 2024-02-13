@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Intro: View {
     @EnvironmentObject var states : States
+    var onIntroCompleted: () -> Void
     
     var columns = [GridItem(.adaptive(minimum: 300), spacing: 20)]
     
@@ -62,12 +63,13 @@ struct Intro: View {
             )
             Button(action: {
                 withAnimation {
-                    states.PhotoToBinary = true
+                    states.PhotoToBinary = false
                     states.SpeechToBinary = false
                     states.TextToBinary = false
                     states.FirstWelcome = false
-                    states.HomeScreen = false
+                    states.HomeScreen = true
                     states.Intro = false
+                    onIntroCompleted()
                 }
             }, label: {
                 HStack {
