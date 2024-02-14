@@ -25,7 +25,7 @@ struct VoiceButton: View {
             Image(systemName: "waveform")
                 .resizable()
                 .frame(width: 40, height: 40)
-                .foregroundColor(.white)
+                .foregroundColor(.lightGrey)
                 .background(swiftUISpeech.isRecording ? Circle().foregroundColor(.red).frame(width: 85, height: 85): Circle().foregroundColor(.accentColor).frame(width: 70, height: 70))
         }
         .actionSheet(isPresented: $actionPop) {

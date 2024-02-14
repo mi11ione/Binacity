@@ -8,7 +8,7 @@
 import SwiftUI
 import Speech
 
-public class SwiftUISpeech: ObservableObject{
+public class SwiftUISpeech: ObservableObject {
     init() {
         recognitionTask?.cancel()
         self.recognitionTask = nil

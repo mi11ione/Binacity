@@ -10,7 +10,7 @@ import Speech
 
 struct VoiceToTextView: View {
     @EnvironmentObject var swiftUISpeech: SwiftUISpeech
-    @EnvironmentObject var states: States
+    
     var translationVoice: String {
         convertToBinary(swiftUISpeech.outputText)
     }
@@ -26,6 +26,8 @@ struct VoiceToTextView: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                     Spacer()
+                    LanguageButton()
+                        .padding(.top, 10)
                 }
 
                 Text("Next we're capturing your voice, transcribing it using SFSpeechRecognizer\n\n1. Press the record button\n\n2. Say something, like your name\n\n3. See it translated into binary!")

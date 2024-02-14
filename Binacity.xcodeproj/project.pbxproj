@@ -30,6 +30,7 @@
 		338E29072B74229C00C39172 /* PhotoToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29062B74229C00C39172 /* PhotoToTextView.swift */; };
 		338E29092B7422D800C39172 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29082B7422D800C39172 /* ScannerView.swift */; };
 		338E290D2B74234100C39172 /* TextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E290C2B74234100C39172 /* TextRecognition.swift */; };
+		33AA4E8A2B7D0C1A00EECC6C /* VoiceLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA4E892B7D0C1A00EECC6C /* VoiceLanguageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		338E29082B7422D800C39172 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		338E290C2B74234100C39172 /* TextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition.swift; sourceTree = "<group>"; };
 		338E29102B7428E300C39172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33AA4E892B7D0C1A00EECC6C /* VoiceLanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceLanguageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				336C91202B7C056300B172DF /* VoiceButton.swift */,
 				336C91222B7C057E00B172DF /* VoiceToTextView.swift */,
 				338E29022B7421B300C39172 /* SwiftUISpeech.swift */,
+				33AA4E892B7D0C1A00EECC6C /* VoiceLanguageButton.swift */,
 			);
 			path = VoiceText;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				338E28F42B741EB800C39172 /* Tab.swift in Sources */,
 				338E29092B7422D800C39172 /* ScannerView.swift in Sources */,
 				338E28EA2B741BA300C39172 /* FeaturedItem.swift in Sources */,
+				33AA4E8A2B7D0C1A00EECC6C /* VoiceLanguageButton.swift in Sources */,
 				338E29072B74229C00C39172 /* PhotoToTextView.swift in Sources */,
 				336C91232B7C057E00B172DF /* VoiceToTextView.swift in Sources */,
 				338E28CE2B74186500C39172 /* ContentView.swift in Sources */,
