@@ -12,7 +12,7 @@ struct VoiceToTextView: View {
     @EnvironmentObject var swiftUISpeech: SwiftUISpeech
     @EnvironmentObject var states: States
     var translationVoice: String {
-        return dictionary.reduce(self.swiftUISpeech.outputText) { $0.replacingOccurrences(of: $1.key, with: $1.value) }
+        convertToBinary(swiftUISpeech.outputText)
     }
 
     var body: some View {
