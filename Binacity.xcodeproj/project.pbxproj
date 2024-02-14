@@ -20,7 +20,6 @@
 		338E28EC2B741BDB00C39172 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28EB2B741BDB00C39172 /* TabBar.swift */; };
 		338E28EE2B741C1600C39172 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28ED2B741C1600C39172 /* Course.swift */; };
 		338E28F02B741E7100C39172 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28EF2B741E7100C39172 /* Model.swift */; };
-		338E28F22B741EA100C39172 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28F12B741EA100C39172 /* PreferenceKey.swift */; };
 		338E28F42B741EB800C39172 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28F32B741EB800C39172 /* Tab.swift */; };
 		338E28F62B741EDF00C39172 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28F52B741EDF00C39172 /* Animations.swift */; };
 		338E28F82B741EF800C39172 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E28F72B741EF800C39172 /* Modifiers.swift */; };
@@ -30,7 +29,6 @@
 		338E29052B74226C00C39172 /* ModelPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29042B74226C00C39172 /* ModelPhoto.swift */; };
 		338E29072B74229C00C39172 /* PhotoToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29062B74229C00C39172 /* PhotoToTextView.swift */; };
 		338E29092B7422D800C39172 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E29082B7422D800C39172 /* ScannerView.swift */; };
-		338E290B2B74233300C39172 /* TextPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E290A2B74233300C39172 /* TextPreviewView.swift */; };
 		338E290D2B74234100C39172 /* TextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338E290C2B74234100C39172 /* TextRecognition.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +48,6 @@
 		338E28EB2B741BDB00C39172 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		338E28ED2B741C1600C39172 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		338E28EF2B741E7100C39172 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		338E28F12B741EA100C39172 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		338E28F32B741EB800C39172 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		338E28F52B741EDF00C39172 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		338E28F72B741EF800C39172 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		338E29042B74226C00C39172 /* ModelPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPhoto.swift; sourceTree = "<group>"; };
 		338E29062B74229C00C39172 /* PhotoToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoToTextView.swift; sourceTree = "<group>"; };
 		338E29082B7422D800C39172 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
-		338E290A2B74233300C39172 /* TextPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewView.swift; sourceTree = "<group>"; };
 		338E290C2B74234100C39172 /* TextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition.swift; sourceTree = "<group>"; };
 		338E29102B7428E300C39172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +80,16 @@
 			path = TextBinary;
 			sourceTree = "<group>";
 		};
+		332AB72B2B7CD789000E93C0 /* VoiceText */ = {
+			isa = PBXGroup;
+			children = (
+				336C91202B7C056300B172DF /* VoiceButton.swift */,
+				336C91222B7C057E00B172DF /* VoiceToTextView.swift */,
+				338E29022B7421B300C39172 /* SwiftUISpeech.swift */,
+			);
+			path = VoiceText;
+			sourceTree = "<group>";
+		};
 		338E28BF2B74186500C39172 = {
 			isa = PBXGroup;
 			children = (
@@ -104,13 +110,14 @@
 		338E28CA2B74186500C39172 /* Binacity */ = {
 			isa = PBXGroup;
 			children = (
+				33AA4E882B7CDF4900EECC6C /* Translation */,
+				33AA4E872B7CDF2B00EECC6C /* Home */,
+				33AA4E862B7CDEFE00EECC6C /* Intro */,
 				331613FF2B74E3A700D5FAFD /* TextBinary */,
-				338E28E72B741B8900C39172 /* SpeechText */,
+				332AB72B2B7CD789000E93C0 /* VoiceText */,
 				338E28E62B741B7E00C39172 /* PhotoText */,
 				338E28E52B741B6900C39172 /* Styles */,
 				338E28E42B741B6300C39172 /* Model */,
-				338E28E32B741B5600C39172 /* Components */,
-				338E28FB2B741FDF00C39172 /* Essentials */,
 				338E28CB2B74186500C39172 /* BinacityApp.swift */,
 				338E28CD2B74186500C39172 /* ContentView.swift */,
 				338E28CF2B74186600C39172 /* Assets.xcassets */,
@@ -119,24 +126,12 @@
 			path = Binacity;
 			sourceTree = "<group>";
 		};
-		338E28E32B741B5600C39172 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				338E28E92B741BA300C39172 /* FeaturedItem.swift */,
-				331614002B74E3E500D5FAFD /* Dictionary.swift */,
-				338883882B76C23600FFECCA /* Translation.swift */,
-				338E28EB2B741BDB00C39172 /* TabBar.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		338E28E42B741B6300C39172 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				338E28ED2B741C1600C39172 /* Course.swift */,
+				338E28DA2B7418EB00C39172 /* States.swift */,
 				338E28EF2B741E7100C39172 /* Model.swift */,
-				338E28F12B741EA100C39172 /* PreferenceKey.swift */,
-				338E28F32B741EB800C39172 /* Tab.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,30 +151,37 @@
 				338E29042B74226C00C39172 /* ModelPhoto.swift */,
 				338E29062B74229C00C39172 /* PhotoToTextView.swift */,
 				338E29082B7422D800C39172 /* ScannerView.swift */,
-				338E290A2B74233300C39172 /* TextPreviewView.swift */,
 				338E290C2B74234100C39172 /* TextRecognition.swift */,
 			);
 			path = PhotoText;
 			sourceTree = "<group>";
 		};
-		338E28E72B741B8900C39172 /* SpeechText */ = {
+		33AA4E862B7CDEFE00EECC6C /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				338E29022B7421B300C39172 /* SwiftUISpeech.swift */,
-				336C91202B7C056300B172DF /* VoiceButton.swift */,
-				336C91222B7C057E00B172DF /* VoiceToTextView.swift */,
+				338E28E92B741BA300C39172 /* FeaturedItem.swift */,
+				338E28DE2B74199600C39172 /* Intro.swift */,
 			);
-			path = SpeechText;
+			path = Intro;
 			sourceTree = "<group>";
 		};
-		338E28FB2B741FDF00C39172 /* Essentials */ = {
+		33AA4E872B7CDF2B00EECC6C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				338E28DE2B74199600C39172 /* Intro.swift */,
-				338E28DA2B7418EB00C39172 /* States.swift */,
 				338E28F92B741FA400C39172 /* HomeScreen.swift */,
+				338E28EB2B741BDB00C39172 /* TabBar.swift */,
+				338E28F32B741EB800C39172 /* Tab.swift */,
 			);
-			path = Essentials;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		33AA4E882B7CDF4900EECC6C /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				338883882B76C23600FFECCA /* Translation.swift */,
+				331614002B74E3E500D5FAFD /* Dictionary.swift */,
+			);
+			path = Translation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +263,6 @@
 				338E28F62B741EDF00C39172 /* Animations.swift in Sources */,
 				338883892B76C23600FFECCA /* Translation.swift in Sources */,
 				338E28DB2B7418EB00C39172 /* States.swift in Sources */,
-				338E28F22B741EA100C39172 /* PreferenceKey.swift in Sources */,
 				338E28FD2B74207800C39172 /* TextToBinary.swift in Sources */,
 				338E28F42B741EB800C39172 /* Tab.swift in Sources */,
 				338E29092B7422D800C39172 /* ScannerView.swift in Sources */,
@@ -270,7 +271,6 @@
 				336C91232B7C057E00B172DF /* VoiceToTextView.swift in Sources */,
 				338E28CE2B74186500C39172 /* ContentView.swift in Sources */,
 				331614012B74E3E500D5FAFD /* Dictionary.swift in Sources */,
-				338E290B2B74233300C39172 /* TextPreviewView.swift in Sources */,
 				338E28DF2B74199600C39172 /* Intro.swift in Sources */,
 				338E28CC2B74186500C39172 /* BinacityApp.swift in Sources */,
 				338E28EC2B741BDB00C39172 /* TabBar.swift in Sources */,

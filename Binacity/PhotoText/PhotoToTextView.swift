@@ -47,7 +47,6 @@ struct PhotoToTextView: View {
                             VStack(alignment: .leading) {
                                 Text(textItem.text)
                                     .padding(.vertical, 7)
-                                    .background(Color(.secondarySystemBackground))
                                     .clipShape(RoundedRectangle(cornerRadius: 9))
                                     .font(.body)
                                     .fontWeight(.bold)
@@ -58,7 +57,6 @@ struct PhotoToTextView: View {
                             VStack(alignment: .leading) {
                                 Text(textItem.newText)
                                     .padding(.vertical, 7)
-                                    .background(Color(.secondarySystemBackground))
                                     .clipShape(RoundedRectangle(cornerRadius: 9))
                                     .font(.body)
                                     .fontWeight(.bold)
@@ -89,7 +87,6 @@ struct PhotoToTextView: View {
                                     .font(.headline)
                                 Spacer()
                             }
-                            .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 9))
                         }
                     }

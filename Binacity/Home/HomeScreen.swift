@@ -33,6 +33,5 @@ struct HomeScreen: View {
             }
             TabBar()
         }
-        .dynamicTypeSize(.large ... .xxLarge)
     }
 }

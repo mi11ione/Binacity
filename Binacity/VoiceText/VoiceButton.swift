@@ -29,7 +29,7 @@ struct VoiceButton: View {
                 .background(swiftUISpeech.isRecording ? Circle().foregroundColor(.red).frame(width: 85, height: 85): Circle().foregroundColor(.accentColor).frame(width: 70, height: 70))
         }
         .actionSheet(isPresented: $actionPop) {
-            ActionSheet(title: Text("ERROR: - 1"), message: Text("Access Denied by User"), buttons: [ActionSheet.Button.destructive(Text("Reinstall the App"))])
+            ActionSheet(title: Text("ERROR: - 1"), message: Text("Access Denied by User"), buttons: [ActionSheet.Button.destructive(Text("Go to Settings"))])
         }
     }
 }

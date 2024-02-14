@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FeaturedItem: View {
     var course: Course
-    @Environment(\.sizeCategory) var sizeCategory
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

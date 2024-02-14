@@ -10,8 +10,6 @@ import SwiftUI
 struct TextToBinary: View {
     @EnvironmentObject var states: States
     @State private var checkAmount = ""
-    var tipPercentage = ["Binary", "Normal"]
-    @State private var selectedColor = "Binary"
     @FocusState private var amountIsFocused: Bool
     
     var translation: String {
@@ -41,7 +39,6 @@ struct TextToBinary: View {
                     Section(header: Text("Original text").fontWeight(.bold)) {
                         TextField("Type something", text: $checkAmount)
                             .padding(.vertical, 7)
-                            .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 9))
                             .focused($amountIsFocused)
                     }
@@ -49,7 +46,6 @@ struct TextToBinary: View {
                     Section(header: Text("Translated to binary").fontWeight(.bold)) {
                         Text(translation)
                             .padding(.vertical, 7)
-                            .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 9))
                             .font(.body)
                             .fontWeight(.bold)

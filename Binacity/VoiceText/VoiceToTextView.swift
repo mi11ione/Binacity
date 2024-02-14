@@ -41,7 +41,6 @@ struct VoiceToTextView: View {
                     Section(header: Text("Original Text").fontWeight(.bold)) {
                         Text(swiftUISpeech.outputText)
                             .padding(.vertical, 7)
-                            .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 9))
                             .font(.body)
                             .fontWeight(.bold)
@@ -50,7 +49,6 @@ struct VoiceToTextView: View {
                     Section(header: Text("Translated to binary").fontWeight(.bold)) {
                         Text(translationVoice)
                             .padding(.vertical, 7)
-                            .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 9))
                             .font(.body)
                             .fontWeight(.bold)

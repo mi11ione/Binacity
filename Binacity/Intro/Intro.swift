@@ -12,9 +12,7 @@ struct Intro: View {
     var onIntroCompleted: () -> Void
     
     var columns = [GridItem(.adaptive(minimum: 300), spacing: 20)]
-    
-    @State var show = false
-    @State var showStatusBar = true
+
     @State var showCourse = false
     @State var selectedCourse: Course = courses[0]
     @State var contentHasScrolled = false
@@ -49,8 +47,6 @@ struct Intro: View {
                                 showCourse = true
                                 selectedCourse = course
                             }
-                            .accessibilityElement(children: .combine)
-                            .accessibilityAddTraits(.isButton)
                     }
                 }
             }
@@ -66,7 +62,6 @@ struct Intro: View {
                     states.PhotoToBinary = false
                     states.VoiceToBinary = false
                     states.TextToBinary = false
-                    states.FirstWelcome = false
                     states.HomeScreen = true
                     states.Intro = false
                     onIntroCompleted()
