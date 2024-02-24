@@ -49,9 +49,11 @@ struct TextRecognition {
             guard let observations = request.results as? [VNRecognizedTextObservation] else { return }
 
             observations.forEach { observation in
-                guard let recognizedText = observation.topCandidates(1).first else { return }
-                textItem.text += recognizedText.string
-                textItem.text += "\n"
+                guard let recognizedText = observation.topCandidates(1).first?.string else { return }
+                if !textItem.text.isEmpty {
+                    textItem.text += "\n"
+                }
+                textItem.text += recognizedText
             }
         }
 
