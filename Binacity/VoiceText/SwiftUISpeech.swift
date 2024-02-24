@@ -9,13 +9,29 @@ import SwiftUI
 import Speech
 
 public class SwiftUISpeech: ObservableObject {
+    @Published var selectedLanguage: String = "en-US" {
+        didSet {
+            updateSpeechRecognizer()
+        }
+    }
+
     init() {
+        selectedLanguage = "en-US"
+        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: selectedLanguage))
         recognitionTask?.cancel()
         self.recognitionTask = nil
     }
 
     func getButton() -> VoiceButton {
         return button
+    }
+    
+    private func updateSpeechRecognizer() {
+        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: selectedLanguage))
+    }
+
+    func getLocale() -> Locale {
+        return Locale(identifier: selectedLanguage)
     }
 
     func startRecording() {
@@ -92,7 +108,7 @@ public class SwiftUISpeech: ObservableObject {
     @Published var isRecording: Bool = false
     @Published var button = VoiceButton()
 
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
+    private var speechRecognizer: SFSpeechRecognizer?
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private let authStat = SFSpeechRecognizer.authorizationStatus()
     private var recognitionTask: SFSpeechRecognitionTask?

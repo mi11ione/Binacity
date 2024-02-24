@@ -11,11 +11,9 @@ struct LanguageButton: View {
     var options = ["en-US", "ru-RU"]
     
     @State private var isMenuOpen: Bool = false
-    @State var selectedOption: Set<String> = []
-    
-    var lang: String {
-        return selectedOption.joined(separator: ", ")
-    }
+    @State var selectedOption: Set<String> = ["en-US"]
+
+    @EnvironmentObject var swiftUISpeech: SwiftUISpeech
 
     var body: some View {
         Menu {
@@ -41,10 +39,20 @@ struct LanguageButton: View {
                 .cornerRadius(10)
         }
         .padding(.trailing)
+
+        .actionSheet(isPresented: $isMenuOpen) {
+            ActionSheet(title: Text("Select Language"), message: nil, buttons: [
+                .default(Text("English"), action: { toggleOption("en-US") }),
+                .default(Text("Russian"), action: { toggleOption("ru-RU") }),
+                .cancel()
+            ])
+        }
     }
 
     private func toggleOption(_ option: String) {
         selectedOption.removeAll()
         selectedOption.insert(option)
+
+        swiftUISpeech.selectedLanguage = option
     }
 }

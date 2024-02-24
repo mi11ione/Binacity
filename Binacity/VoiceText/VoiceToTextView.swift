@@ -35,7 +35,7 @@ struct VoiceToTextView: View {
                     .fontWeight(.bold)
                     .foregroundStyle(.secondary)
                     .padding([.bottom, .leading])
-                swiftUISpeech.getButton()
+                SwiftUISpeech().getButton()
                     .padding(.vertical)
                     .padding(.bottom)
 
