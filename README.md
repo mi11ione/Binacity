@@ -1,5 +1,7 @@
 # Binacity: Your Fancy Guide to Binary!
 
+[Get in on TestFlight](https://testflight.apple.com/join/GJSKdtUK)
+
 Welcome to **Binacity**, the cheekiest iOS app on the market that turns the mundane task of converting data into binary into an exhilarating adventure! It's not just an app; it's your sassy sidekick in the digital world. Let's dive into the digital deep end - with a wink and a smile😉
 
 ## What's Under the Hood?
