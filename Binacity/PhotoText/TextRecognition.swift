@@ -24,7 +24,7 @@ struct TextRecognition {
                 do {
                     let textItem = TextItem()
                     try requestHandler.perform([getTextRecognitionRequest(with: textItem)])
-                    
+
                     DispatchQueue.main.async {
                         recognizedContent.items.append(textItem)
                     }

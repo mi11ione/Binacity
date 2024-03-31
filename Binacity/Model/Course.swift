@@ -26,5 +26,5 @@ var courses = [
     Course(index: 4, title: "Looks crazy", text: "In a digital numeral, the digit furthest to the right is the ones digit\n\nThe next digit to the left is the twos digit, next comes the fours digit, then the eights digit and so on", image: "shhMemoji", logo: "eye", height: 130),
     Course(index: 3, title: "The binary alphabet", text: "There is also a binary alphabet\n\nA for example is: 01000001, whereas a (not capital) is: 01100001\n\nI'll be using this alphabet here", image: "ideaMemoji", logo: "menucard", height: 130),
     Course(index: 3, title: "Main technologies used", text: "SwiftUI \n\nVisionKit \n\nSFSpeechRecognizer", image: "photoMemoji", logo: "paintbrush", height: 130),
-    Course(index: 3, title: "Let's get started!", text: "I can explain binary for daaays to you, however, it's better to see it in action 🎯 Now tap Get Started!", image: "startMemoji", logo: "visionpro", height: 230)
+    Course(index: 3, title: "Let's get started!", text: "I can explain binary for daaays to you, however, it's better to see it in action 🎯 Now tap Get Started!", image: "startMemoji", logo: "visionpro", height: 230),
 ]

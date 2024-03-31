@@ -5,8 +5,8 @@
 //  Created by mi11ion on 07.02.2024.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 class Model: ObservableObject {
     @Published var showTab: Bool = true

@@ -11,11 +11,11 @@ struct TextToBinary: View {
     @EnvironmentObject var states: States
     @State private var checkAmount = ""
     @FocusState private var amountIsFocused: Bool
-    
+
     var translation: String {
         convertToBinary(checkAmount)
     }
-    
+
     var body: some View {
         VStack {
             VStack {
@@ -28,13 +28,13 @@ struct TextToBinary: View {
                         .frame(width: 50, height: 50)
                     Spacer()
                 }
-                
+
                 Text("Last but not least, we are translating live now!\n\n1. Tap the texfield \n\n2. Type something\n\n3. Read it in binary!")
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundStyle(.secondary)
                     .padding([.bottom, .leading])
-                
+
                 List {
                     Section(header: Text("Original text").fontWeight(.bold)) {
                         TextField("Type something", text: $checkAmount)
@@ -42,7 +42,7 @@ struct TextToBinary: View {
                             .clipShape(RoundedRectangle(cornerRadius: 9))
                             .focused($amountIsFocused)
                     }
-                    
+
                     Section(header: Text("Translated to binary").fontWeight(.bold)) {
                         Text(translation)
                             .padding(.vertical, 7)

@@ -9,7 +9,7 @@ import SwiftUI
 import VisionKit
 
 struct ScannerView: UIViewControllerRepresentable {
-    var didFinishScanning: ((_ result: Result<[UIImage], Error>) -> Void)
+    var didFinishScanning: (_ result: Result<[UIImage], Error>) -> Void
     var didCancelScanning: () -> Void
 
     func makeUIViewController(context: Context) -> VNDocumentCameraViewController {
@@ -18,7 +18,7 @@ struct ScannerView: UIViewControllerRepresentable {
         return scannerViewController
     }
 
-    func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) { }
+    func updateUIViewController(_: VNDocumentCameraViewController, context _: Context) {}
 
     func makeCoordinator() -> Coordinator {
         Coordinator(with: self)
@@ -31,20 +31,20 @@ struct ScannerView: UIViewControllerRepresentable {
             self.scannerView = scannerView
         }
 
-        func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
+        func documentCameraViewController(_: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             var scannedPages = [UIImage]()
 
-            for i in 0..<scan.pageCount {
+            for i in 0 ..< scan.pageCount {
                 scannedPages.append(scan.imageOfPage(at: i))
             }
             scannerView.didFinishScanning(.success(scannedPages))
         }
 
-        func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
+        func documentCameraViewControllerDidCancel(_: VNDocumentCameraViewController) {
             scannerView.didCancelScanning()
         }
 
-        func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
+        func documentCameraViewController(_: VNDocumentCameraViewController, didFailWithError error: Error) {
             scannerView.didFinishScanning(.failure(error))
         }
     }

@@ -15,7 +15,7 @@ struct ContentView: View {
         Group {
             if !introCompleted {
                 Intro(onIntroCompleted: {
-                    self.introCompleted = true
+                    introCompleted = true
                     states.HomeScreen = true
                 })
             } else {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LanguageButton: View {
     var options = ["en-US", "ru-RU"]
-    
+
     @State private var isMenuOpen: Bool = false
     @State var selectedOption: Set<String> = ["en-US"]
 
@@ -39,12 +39,11 @@ struct LanguageButton: View {
                 .cornerRadius(10)
         }
         .padding(.trailing)
-
         .actionSheet(isPresented: $isMenuOpen) {
             ActionSheet(title: Text("Select Language"), message: nil, buttons: [
                 .default(Text("English"), action: { toggleOption("en-US") }),
                 .default(Text("Russian"), action: { toggleOption("ru-RU") }),
-                .cancel()
+                .cancel(),
             ])
         }
     }

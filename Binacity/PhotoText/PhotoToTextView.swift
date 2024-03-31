@@ -18,7 +18,7 @@ struct PhotoToTextView: View {
     @State var color: Color = .teal
     @State var selectedX: CGFloat = 0
     @State var x: [CGFloat] = [0, 0, 0, 0]
-    
+
     @EnvironmentObject var model: Model
     @AppStorage("selectedTab") var selectedTab: Tab = .photo
 
@@ -52,7 +52,7 @@ struct PhotoToTextView: View {
                                     .fontWeight(.bold)
                             }
                         }
-                        
+
                         Section(header: Text("Translated to binary").fontWeight(.bold)) {
                             VStack(alignment: .leading) {
                                 Text(textItem.newText)
@@ -94,15 +94,14 @@ struct PhotoToTextView: View {
                 .sheet(isPresented: $showScanner, content: {
                     ScannerView { result in
                         switch result {
-
-                        case .success(let scannedImages):
+                        case let .success(scannedImages):
                             isRecognizing = true
                             TextRecognition(scannedImages: scannedImages, recognizedContent: recognizedContent) {
                                 isRecognizing = false
                             }
                             .recognizeText()
 
-                        case .failure(let error):
+                        case let .failure(error):
                             print(error.localizedDescription)
                         }
 

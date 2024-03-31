@@ -5,12 +5,12 @@
 //  Created by mi11ion on 13.02.2024.
 //
 
-import SwiftUI
 import Speech
+import SwiftUI
 
 struct VoiceToTextView: View {
     @EnvironmentObject var swiftUISpeech: SwiftUISpeech
-    
+
     var translationVoice: String {
         convertToBinary(swiftUISpeech.outputText)
     }
@@ -47,7 +47,7 @@ struct VoiceToTextView: View {
                             .font(.body)
                             .fontWeight(.bold)
                     }
-                    
+
                     Section(header: Text("Translated to binary").fontWeight(.bold)) {
                         Text(translationVoice)
                             .padding(.vertical, 7)

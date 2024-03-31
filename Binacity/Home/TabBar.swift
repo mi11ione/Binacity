@@ -11,10 +11,10 @@ struct TabBar: View {
     @State var color: Color = .teal
     @State var selectedX: CGFloat = 0
     @State var x: [CGFloat] = [0, 0, 0, 0]
-    
+
     @EnvironmentObject var model: Model
     @AppStorage("selectedTab") var selectedTab: Tab = .photo
-    
+
     var body: some View {
         GeometryReader { proxy in
             let hasHomeIndicator = proxy.safeAreaInsets.bottom > 0

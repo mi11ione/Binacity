@@ -5,8 +5,8 @@
 //  Created by mi11ion on 07.02.2024.
 //
 
-import SwiftUI
 import Speech
+import SwiftUI
 
 public class SwiftUISpeech: ObservableObject {
     @Published var selectedLanguage: String = "en-US" {
@@ -19,23 +19,23 @@ public class SwiftUISpeech: ObservableObject {
         selectedLanguage = "en-US"
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: selectedLanguage))
         recognitionTask?.cancel()
-        self.recognitionTask = nil
+        recognitionTask = nil
     }
 
     func getButton() -> VoiceButton {
-        return button
+        button
     }
-    
+
     private func updateSpeechRecognizer() {
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: selectedLanguage))
     }
 
     func getLocale() -> Locale {
-        return Locale(identifier: selectedLanguage)
+        Locale(identifier: selectedLanguage)
     }
 
     func startRecording() {
-        outputText = "";
+        outputText = ""
 
         let audioSession = AVAudioSession.sharedInstance()
         let inputNode = audioEngine.inputNode
@@ -48,7 +48,7 @@ public class SwiftUISpeech: ObservableObject {
         }
 
         let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
             self.recognitionRequest?.append(buffer)
         }
 
@@ -65,7 +65,7 @@ public class SwiftUISpeech: ObservableObject {
         recognitionRequest.shouldReportPartialResults = true
 
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { result, error in
-            if (result != nil) {
+            if result != nil {
                 self.outputText = (result?.transcriptions[0].formattedString)!
             }
 
@@ -85,9 +85,9 @@ public class SwiftUISpeech: ObservableObject {
     func stopRecording() {
         audioEngine.stop()
         recognitionRequest?.endAudio()
-        self.audioEngine.inputNode.removeTap(onBus: 0)
-        self.recognitionTask?.cancel()
-        self.recognitionTask = nil
+        audioEngine.inputNode.removeTap(onBus: 0)
+        recognitionTask?.cancel()
+        recognitionTask = nil
     }
 
     func getVoiceStatus() -> String {
@@ -113,5 +113,5 @@ public class SwiftUISpeech: ObservableObject {
     private let authStat = SFSpeechRecognizer.authorizationStatus()
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-    public var outputText: String = "";
+    public var outputText: String = ""
 }

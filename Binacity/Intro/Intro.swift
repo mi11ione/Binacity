@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct Intro: View {
-    @EnvironmentObject var states : States
+    @EnvironmentObject var states: States
     var onIntroCompleted: () -> Void
-    
+
     var columns = [GridItem(.adaptive(minimum: 300), spacing: 20)]
 
     @State var showCourse = false
     @State var selectedCourse: Course = courses[0]
     @State var contentHasScrolled = false
-    
+
     @EnvironmentObject var model: Model
     @Namespace var namespace
-    
+
     var body: some View {
         VStack {
             TabView {
@@ -38,7 +38,7 @@ struct Intro: View {
                                 Image(course.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .offset(x: 50, y: course.height-270)
+                                    .offset(x: 50, y: course.height - 270)
                                     .frame(height: course.height)
                                     .offset(x: proxy.frame(in: .global).minX / 2)
                             )

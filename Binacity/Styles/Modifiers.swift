@@ -18,11 +18,12 @@ struct OutlineModifier: ViewModifier {
                     .linearGradient(
                         colors: [
                             .white.opacity(colorScheme == .dark ? 0.1 : 0.3),
-                            .black.opacity(0.1)],
+                            .black.opacity(0.1),
+                        ],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
+                    )
                 )
-            )
         )
     }
 }
@@ -37,7 +38,8 @@ struct OutlineVerticalModifier: ViewModifier {
                     .linearGradient(
                         colors: [.black.opacity(0.2), .white.opacity(0.6)],
                         startPoint: .top,
-                        endPoint: .bottom)
+                        endPoint: .bottom
+                    )
                 )
                 .blendMode(.overlay)
         )
@@ -57,15 +59,15 @@ struct SlideFadeIn: ViewModifier {
 
 extension View {
     func slideFadeIn(show: Bool, offset: Double = 10) -> some View {
-        self.modifier(SlideFadeIn(show: show, offset: offset))
+        modifier(SlideFadeIn(show: show, offset: offset))
     }
 
     func backgroundStyle(cornerRadius: CGFloat = 20, opacity: Double = 0.6) -> some View {
-        self.modifier(BackgroundStyle(cornerRadius: cornerRadius, opacity: opacity))
+        modifier(BackgroundStyle(cornerRadius: cornerRadius, opacity: opacity))
     }
 
     func backgroundColor(opacity: Double = 0.6) -> some View {
-        self.modifier(BackgroundColor(opacity: opacity))
+        modifier(BackgroundColor(opacity: opacity))
     }
 }
 
@@ -80,10 +82,11 @@ struct OutlineOverlay: ViewModifier {
                     .linearGradient(
                         colors: [
                             .white.opacity(colorScheme == .dark ? 0.6 : 0.3),
-                            .black.opacity(colorScheme == .dark ? 0.3 : 0.1)
+                            .black.opacity(colorScheme == .dark ? 0.3 : 0.1),
                         ],
                         startPoint: .top,
-                        endPoint: .bottom)
+                        endPoint: .bottom
+                    )
                 )
                 .blendMode(.overlay)
         )
